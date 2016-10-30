@@ -1,0 +1,6 @@
+{% extends "CatalogueBundle::layout.html.twig" %}
+  {% block categorie %}
+        {% for categorie in categories %}
+        <p><a href="{{path('list_product',{id:categorie.id})}}">{{categorie.name}}</a></p>
+        {% endfor %}
+  {% endblock %}

@@ -1,0 +1,11 @@
+catalogue_homepage:
+    path:     /
+    defaults: { _controller: CatalogueBundle:Default:index }
+
+list_product:
+    path:     /categorie/{id}
+    defaults: { _controller: CatalogueBundle:Default:index }
+    
+product_detail:
+    path:     /product/{id}
+    defaults: { _controller: CatalogueBundle:Default:display }

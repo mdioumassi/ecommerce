@@ -1,0 +1,5 @@
+{% block sidebar %}
+    {% for categorie in categories %}
+        <p><a href="{{path('list_product',{id:categorie.id})}}">{{categorie.name}}</a></p>
+    {% endfor %}
+{% endblock %}
