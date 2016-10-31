@@ -34,7 +34,12 @@ class SousCategorie
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity = "CatalogueBundle\Entity\Categorie", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
 
     /**
      * Get id
