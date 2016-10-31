@@ -53,11 +53,7 @@ class Produit
      */
     private $price;
     
-   /**
-     * @ORM\ManyToOne(targetEntity = "CatalogueBundle\Entity\Categorie", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $categorie;
+ ....
     
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
