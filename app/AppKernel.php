@@ -8,6 +8,8 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
+            
+            //new Sonata\CacheBundle\SonataCacheBundle(),
              // These are the other bundles the SonataAdminBundle relies on
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

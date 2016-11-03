@@ -39,21 +39,30 @@ class Categorie
      * @ORM\OneToMany(targetEntity="CatalogueBundle\Entity\Produit", mappedBy="categorie")
      */
      private $produits;
-     
+    
     /**
      * @ORM\ManyToMany(targetEntity="CatalogueBundle\Entity\Categorie")
      * @ORM\JoinTable(name="souscategorie",
-     *      joinColumns={@ORM\JoinColumn(name="categorie_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="sous_categorie_id", referencedColumnName="id")}
-     *      )
-     */
-      private $souscategorie;
+     * joinColumns={
+     *     @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_categorie2", referencedColumnName="id")
+     *   }
+     * )
+     **/
+    private $souscategorie;
+ 
+    public function __toString(){
+        return $this->getName();
+    }
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->produits = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->souscategorie = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -180,9 +189,5 @@ class Categorie
     public function getSouscategorie()
     {
         return $this->souscategorie;
-    }
-    
-    public function __toString(){
-      return $this->getName();
     }
 }

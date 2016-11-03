@@ -10,6 +10,6 @@ services:
 
     catalogue.admin.categorie:
         class: CatalogueBundle\Admin\CategorieAdmin
-        arguments: [~, CatalogueBundle\Entity\Categorie, CatalogueBundle:CategorieAdmin]
+        arguments: [~, CatalogueBundle\Entity\Categorie, SonataAdminBundle:CRUD]
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Categorie }

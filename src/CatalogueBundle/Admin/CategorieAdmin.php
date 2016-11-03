@@ -29,6 +29,7 @@ class CategorieAdmin extends AbstractAdmin
         $listMapper
             ->add('name')
             ->add('isActive')
+             ->add('souscategorie')    
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -48,7 +49,8 @@ class CategorieAdmin extends AbstractAdmin
             ->add('name')
             ->add('isActive')
             ->add('souscategorie','sonata_type_model', array(
-               'required' => false
+              'required'=>false  ,
+              'multiple' => true,
             ))
         ;
     }
