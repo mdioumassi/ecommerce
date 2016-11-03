@@ -3,13 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Entity/Categorie.php</file>
             <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Entity/Produit.php</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Admin/CategorieAdmin.php</file>
             <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Resources/views/Default/index.html.twig</file>
             <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Entity/SousCategorie.php</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Resources/config/services.yml</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Resources/config/routing.yml</file>
             <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Resources/views/Default/ficheproduct.html.twig</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Admin/SousCategorieAdmin.php</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/app/config/parameters.yml</file>
             <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Controller/DefaultController.php</file>
             <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Resources/views/Default/sidebar_categorie.html.twig</file>
+            <file>file:/C:/Users/Mohamed/Dropbox/myDev/ecommerce/src/CatalogueBundle/Admin/ProduitAdmin.php</file>
         </group>
     </open-files>
 </project-private>

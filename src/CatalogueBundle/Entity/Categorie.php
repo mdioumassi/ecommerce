@@ -35,11 +35,31 @@ class Categorie
      */
     private $isActive;
     
+    /**
+     * @ORM\OneToMany(targetEntity="CatalogueBundle\Entity\Produit", mappedBy="categorie")
+     */
+     private $produits;
+     
+    /**
+     * @ORM\ManyToMany(targetEntity="CatalogueBundle\Entity\Categorie")
+     * @ORM\JoinTable(name="souscategorie",
+     *      joinColumns={@ORM\JoinColumn(name="categorie_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="sous_categorie_id", referencedColumnName="id")}
+     *      )
+     */
+      private $souscategorie;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->produits = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -87,7 +107,7 @@ class Categorie
     /**
      * Get isActive
      *
-     * @return bool
+     * @return boolean
      */
     public function getIsActive()
     {
@@ -95,15 +115,70 @@ class Categorie
     }
 
     /**
+     * Add produit
+     *
+     * @param \CatalogueBundle\Entity\Produit $produit
+     *
+     * @return Categorie
+     */
+    public function addProduit(\CatalogueBundle\Entity\Produit $produit)
+    {
+        $this->produits[] = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Remove produit
+     *
+     * @param \CatalogueBundle\Entity\Produit $produit
+     */
+    public function removeProduit(\CatalogueBundle\Entity\Produit $produit)
+    {
+        $this->produits->removeElement($produit);
+    }
+
+    /**
      * Get produits
      *
-     * @return \CatalogueBundle\Entity\Produit
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getProduits()
     {
         return $this->produits;
     }
-    public function __toString() {
-        return $this->name;
+
+    /**
+     * Add souscategorie
+     *
+     * @param \CatalogueBundle\Entity\Categorie $souscategorie
+     *
+     * @return Categorie
+     */
+    public function addSouscategorie(\CatalogueBundle\Entity\Categorie $souscategorie)
+    {
+        $this->souscategorie[] = $souscategorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove souscategorie
+     *
+     * @param \CatalogueBundle\Entity\Categorie $souscategorie
+     */
+    public function removeSouscategorie(\CatalogueBundle\Entity\Categorie $souscategorie)
+    {
+        $this->souscategorie->removeElement($souscategorie);
+    }
+
+    /**
+     * Get souscategorie
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSouscategorie()
+    {
+        return $this->souscategorie;
     }
 }
