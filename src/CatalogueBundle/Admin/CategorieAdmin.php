@@ -16,7 +16,6 @@ class CategorieAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('name')
             ->add('isActive')
         ;
@@ -28,7 +27,6 @@ class CategorieAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('name')
             ->add('isActive')
             ->add('_action', null, array(
@@ -47,9 +45,11 @@ class CategorieAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
             ->add('name')
             ->add('isActive')
+            ->add('souscategorie','sonata_type_model', array(
+               'required' => false
+            ))
         ;
     }
 

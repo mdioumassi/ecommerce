@@ -16,13 +16,9 @@ class ProduitAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('name')
             ->add('isActive')
-            ->add('description')
             ->add('price')
-            ->add('imageName')
-            ->add('updatedAt')
         ;
     }
 
@@ -32,13 +28,11 @@ class ProduitAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('name')
             ->add('isActive')
             ->add('description')
             ->add('price')
             ->add('imageName')
-            ->add('updatedAt')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -55,13 +49,16 @@ class ProduitAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
             ->add('name')
             ->add('isActive')
             ->add('description')
             ->add('price')
-            ->add('imageName')
-            ->add('updatedAt')
+            ->add('imageFile', 'file',array(
+                    'label'=>'Photo:',
+                    'required' => false
+            ))
+            ->add('categorie','sonata_type_model',array('multiple' => true, 'by_reference' => false))
+
         ;
     }
 

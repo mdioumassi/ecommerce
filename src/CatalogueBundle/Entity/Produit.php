@@ -231,6 +231,22 @@ class Produit
     {
         return $this->imageName;
     }
+    
+    /**
+     * @return File|null
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+    
+    /**
+     * Set imageName
+     *
+     * @param string $imageName
+     *
+     * @return Produit
+     */
 
     /**
      * Set updatedAt

@@ -181,4 +181,8 @@ class Categorie
     {
         return $this->souscategorie;
     }
+    
+    public function __toString(){
+      return $this->getName();
+    }
 }
