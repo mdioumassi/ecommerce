@@ -2,3 +2,14 @@ services:
 #    catalogue.example:
 #        class: CatalogueBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+    catalogue.admin.produit:
+        class: CatalogueBundle\Admin\ProduitAdmin
+        arguments: [~, CatalogueBundle\Entity\Produit, CatalogueBundle:ProduitAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Produit }
+
+    catalogue.admin.categorie:
+        class: CatalogueBundle\Admin\CategorieAdmin
+        arguments: [~, CatalogueBundle\Entity\Categorie, CatalogueBundle:CategorieAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Categorie }
