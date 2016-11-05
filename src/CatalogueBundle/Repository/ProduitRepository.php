@@ -12,9 +12,10 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getListeProductById($id){
         $req = $this->createQueryBuilder('p')
-               ->select('p.name, p.price, p.id, p.imageName')
-               ->join('p.categorie', 'c')
-               ->where('c.id = :id')
+               ->select('p')
+               ->join('p.categories', 'pc')
+               //->join('pc.categorie', 'c')
+               ->where('pc.id = :id')
                ->setParameter('id', $id);
         
         return $req->getQuery()->getResult();

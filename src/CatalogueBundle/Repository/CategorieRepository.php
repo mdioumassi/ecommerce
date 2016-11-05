@@ -10,16 +10,16 @@ namespace CatalogueBundle\Repository;
  */
 class CategorieRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getByName(){
-          $qb = $this->createQueryBuilder('c')
-                ->select('c.name, c.id')   
-            //    ->join('c.souscategorie','sc')
-                ->where('c.isActive = 1');
-              //  ->andWhere('');
-//                ->join('prof.personnel','p');
-         return $qb
-            ->getQuery()
-            ->getResult()
-          ;
-    }
+//    public function getByName(){
+//          $qb = $this->createQueryBuilder('c')
+//                ->select('c.name, c.id')   
+//            //    ->join('c.souscategorie','sc')
+//                ->where('c.isActive = 1');
+//              //  ->andWhere('');
+////                ->join('prof.personnel','p');
+//         return $qb
+//            ->getQuery()
+//            ->getResult()
+//          ;
+//    }
 }

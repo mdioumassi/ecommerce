@@ -3,7 +3,7 @@
 
 {% block body %}
     <div class="row">
-    {% for product in products %}
+   {% for product in products %}
             <div class="col-sm-3">
                 <div class="w3-card-4">
                     <a href="{{path('product_detail', {id:product.id})}}">

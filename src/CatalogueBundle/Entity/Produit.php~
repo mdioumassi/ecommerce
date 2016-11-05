@@ -294,45 +294,4 @@ class Produit
     {
         return $this->categorie;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add category
-     *
-     * @param \CatalogueBundle\Entity\Categorie $category
-     *
-     * @return Produit
-     */
-    public function addCategory(\CatalogueBundle\Entity\Categorie $category)
-    {
-        $this->categories[] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Remove category
-     *
-     * @param \CatalogueBundle\Entity\Categorie $category
-     */
-    public function removeCategory(\CatalogueBundle\Entity\Categorie $category)
-    {
-        $this->categories->removeElement($category);
-    }
-
-    /**
-     * Get categories
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
 }

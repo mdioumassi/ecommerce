@@ -32,7 +32,7 @@ class ProduitAdmin extends AbstractAdmin
             ->add('isActive')
             ->add('description')
             ->add('price')
-            ->add('categorie')
+            ->add('categories')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -53,12 +53,10 @@ class ProduitAdmin extends AbstractAdmin
             ->add('isActive')
             ->add('description')
             ->add('price')
-            ->add('imageFile', 'file',array(
-                    'label'=>'Photo:',
-                    'required' => false
-            ))
-            ->add('categorie','sonata_type_model',array('expanded'=>true))
-
+            ->add('imageFile', 'file', array(
+              'required'=>false
+            ))         
+            ->add('categories','sonata_type_model',array('expanded'=>true, 'multiple'=>true))
         ;
     }
 
@@ -73,6 +71,7 @@ class ProduitAdmin extends AbstractAdmin
             ->add('isActive')
             ->add('description')
             ->add('price')
+            ->add('imageName')
             ->add('updatedAt')
         ;
     }

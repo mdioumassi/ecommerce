@@ -8,14 +8,14 @@ class DefaultController extends Controller
 {
     public function indexAction($id = null)
     {
-        $listeProducts = $this->getEm()->getRepository('CatalogueBundle:Produit')->getListeProductById($id);
+       $listeProducts = $this->getEm()->getRepository('CatalogueBundle:Produit')->getListeProductById($id);
       
-        if (null === $listeProducts) {
-            throw new NotHttpFoundException("Not Found");
-        }
+//        if (null === $listeProducts) {
+//            throw new NotHttpFoundException("Not Found");
+//        }
         return $this->render('CatalogueBundle:Default:index.html.twig', array(
             'categories' => $this->getCategries(),
-            'products' => $listeProducts
+            'products' => $listeProducts,
         ));
     }
     
@@ -34,7 +34,7 @@ class DefaultController extends Controller
      * @return la liste des catégories
      */
     public function getCategries(){
-        return $this->getEm()->getRepository('CatalogueBundle:Categorie')->getByName();
+        return $this->getEm()->getRepository('CatalogueBundle:Categorie')->findAll();
     }
     
     /**
