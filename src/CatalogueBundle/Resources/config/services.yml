@@ -6,10 +6,10 @@ services:
         class: CatalogueBundle\Admin\CategorieAdmin
         arguments: [~, CatalogueBundle\Entity\Categorie, SonataAdminBundle:CRUD]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Categorie }
+            - { name: sonata.admin, manager_type: orm, group: Gestion Catalogue, label: Gestion Categories }
 
     catalogue.admin.produit:
         class: CatalogueBundle\Admin\ProduitAdmin
         arguments: [~, CatalogueBundle\Entity\Produit, SonataAdminBundle:CRUD]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Produit }
+            - { name: sonata.admin, manager_type: orm, group: Gestion Catalogue, label: Gestion Produits }

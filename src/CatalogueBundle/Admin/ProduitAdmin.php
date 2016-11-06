@@ -49,14 +49,18 @@ class ProduitAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('isActive')
-            ->add('description')
-            ->add('price')
-            ->add('imageFile', 'file', array(
-              'required'=>false
-            ))         
-            ->add('categories','sonata_type_model',array('expanded'=>true, 'multiple'=>true))
+            ->with('Produit',array('class'=>'col-md-9'))
+                ->add('name')
+                ->add('isActive')
+                ->add('description')
+                ->add('price')
+                ->add('imageFile', 'file', array(
+                  'required'=>false
+                )) 
+            ->end() 
+            ->with('Categorie',array('class'=>'col-md-3'))       
+                ->add('categories','sonata_type_model',array('expanded'=>true, 'multiple'=>true))
+            ->end()
         ;
     }
 
